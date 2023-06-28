@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <script type="text/javascript">
+            function playMusic(){
+                document.getElementById("buzzer").disabled = true;
+                document.getElementById("idAudio").play();
+                document.getElementById("buzzer").style.opacity = "50%";
+                setTimeout(function(){  
+                var element = document.getElementById("buzzer") ;
+                element.disabled = false;
+                element.style.opacity = "100%";
+                }, 30000);
+
+            }
+        </script>
+    </head>
+    <body style="background-color: #3B3B3B; position: relative;">
+        <audio id="idAudio">
+            <source src = "./assets/supertramp_RKPcyjWe.mp3" type = "audio/ogg" >
+		    <source src = "./assets/supertramp_RKPcyjWe.mp3" type ="audio/mpeg">
+        </audio>
+        <div class="" style="position: absolute; left:50%; top:50%; transform: translate(-50%, -50%);">
+            <button style="padding:0px; border:none" onclick="playMusic()" type = "button">
+                <img src="./assets/buzzer2.png" style="background:transparent; background-color:#3B3B3B; padding:0px; width:900px" id="buzzer">
+            </button>
+            <!-- <button style="padding:0px; border:none; display:none;" onclick="stopMusic()" type = "button">
+                <img src="./assets/buzzer2.png" style="background-color:#3B3B3B; padding:0px; width:900px" id="buzzer1">
+            </button> -->
+        </div>
+    </body>
+</html>
